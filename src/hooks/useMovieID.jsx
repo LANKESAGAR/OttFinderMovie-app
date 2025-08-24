@@ -18,14 +18,24 @@ const useMovieID = (id) => {
             setMovie(movieResponse.data);
             setProviders(providersResponse.data.results);
 
-            // Find the official trailer
-            const trailer = videosResponse.data.results.find(
+            // First, try to find a TMDB trailer
+            const tmdbTrailer = videosResponse.data.results.find(
                 (video) => video.type === 'Trailer' && video.site === 'YouTube'
             );
-            if (trailer) {
-                setVideoKey(trailer.key);
+
+            if (tmdbTrailer) {
+                setVideoKey(tmdbTrailer.key);
             } else {
-                setVideoKey(null);
+                // If no TMDB trailer, search YouTube as a fallback
+                const youtubeSearchResponse = await axios.get(
+                    `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${movieResponse.data.title} official trailer&type=video&key=${import.meta.env.VITE_YOUTUBE_API_KEY}`
+                );
+
+                if (youtubeSearchResponse.data.items.length > 0) {
+                    setVideoKey(youtubeSearchResponse.data.items[0].id.videoId);
+                } else {
+                    setVideoKey(null);
+                }
             }
 
         } catch (error) {
