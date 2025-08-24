@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className='header'>
         <div className="header-logo">
-            <Link to='/'>Kasakflix</Link>
+            <Link to='/'>Movieflix</Link>
         </div>
         <nav className='header-nav'>
             <ul>

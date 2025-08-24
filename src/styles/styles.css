@@ -338,3 +338,90 @@ color: #aaa;
     color: var(--text-color-light);
     display: block;
 }
+
+/* src/styles.css */
+
+.header-logo a {
+  /* Use a more elegant font if available */
+  font-family: 'Playfair Display', serif; 
+  /* Fallback to 'serif' if not loaded */
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color-light); /* Start with a subtle color */
+  text-decoration: none;
+  /* Add a subtle text shadow for depth */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  /* Unique underline effect on hover */
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.header-logo a:hover {
+  color: var(--primary-color); /* Highlight with the primary color */
+}
+
+/* Create a unique pseudo-element for the animated underline */
+.header-logo a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+}
+
+.header-logo a:hover::after {
+  transform: scaleX(1); /* Expand the underline on hover */
+  transform-origin: bottom left;
+}
+
+/* src/styles.css */
+
+.movie-detail-container {
+  display: flex;
+  flex-direction: column; /* This is the key change */
+  gap: 40px;
+  padding: 40px;
+  background: var(--card-bg-dark);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color-dark);
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.movie-trailer-container {
+  width: 100%; /* Ensures the trailer takes up the full width */
+  margin-bottom: 20px;
+}
+
+.movie-trailer-container iframe {
+  width: 100%;
+  height: 500px; /* Adjust height for a good aspect ratio */
+  border-radius: 8px;
+}
+
+.movie-content-wrapper {
+  display: flex; /* New flex container for the poster and info */
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .movie-detail-container {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  .movie-content-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 40px;
+    background: var(--card-bg-dark);
+    border-radius: 8px;
+  }
+}
