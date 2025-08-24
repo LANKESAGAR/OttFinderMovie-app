@@ -1,0 +1,340 @@
+/* src/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #e50914; /* Netflix Red */
+  --text-color-light: #fff;
+  --text-color-dark: #333;
+  --bg-color-dark: #141414; /* Dark Background */
+  --card-bg-dark: #1f1f1f; /* Card Background */
+  --border-color-dark: #333;
+  --shadow-color-dark: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-light);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: transparent;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color-dark);
+  margin-bottom: 30px;
+}
+
+.header-logo a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: -1px;
+}
+
+.header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.header-nav a {
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+  color: var(--primary-color);
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  position: relative;
+  background: var(--card-bg-dark);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 10px 20px var(--shadow-color-dark);
+}
+
+.movie-card-poster {
+  position: relative;
+}
+
+.movie-card-poster img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-card-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.movie-card-info h3 {
+  margin: 0;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.watchlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 8px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.watchlist-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.search-page-container,
+.watchlist-page-container {
+  padding-top: 20px;
+}
+
+.search-page-container h1,
+.watchlist-page-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  background: #333;
+  border: 1px solid #555;
+  color: var(--text-color-light);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.movie-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+  background: var(--card-bg-dark);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow-color-dark);
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+@media (min-width: 768px) {
+  .movie-detail-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.movie-poster-section {
+  flex-shrink: 0;
+}
+
+.movie-poster-section img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.movie-info-section {
+  flex-grow: 1;
+}
+
+.movie-info-section h1 {
+  font-size: 3rem;
+  margin-top: 0;
+  color: var(--text-color-light);
+}
+
+.movie-info-section p {
+  line-height: 1.6;
+}
+
+.add-to-watchlist-btn {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.add-to-watchlist-btn:hover {
+  background-color: var(--primary-color);
+  filter: brightness(1.2);
+}
+
+.watchlist-page-container h1 {
+  margin-bottom: 20px;
+}
+
+.no-movies {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.5rem;
+  color: #aaa;
+}
+
+/* src/styles.css - add these styles */
+
+.providers-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.providers-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 20px;
+}
+
+.country-provider-block {
+background: var(--bg-color-dark);
+border: 1px solid var(--border-color-dark);
+padding: 15px;
+border-radius: 8px;
+box-shadow: 0 2px 4px var(--shadow-color-dark);
+}
+
+.country-provider-block h3 {
+font-size: 1.5rem;
+text-align: center;
+margin-top: 0;
+margin-bottom: 15px;
+color: var(--primary-color);
+}
+
+.country-provider-block h4 {
+font-size: 1rem;
+margin-top: 10px;
+margin-bottom: 5px;
+color: #aaa;
+}
+
+/* Add to src/styles.css */
+/* --- New Country Search Input --- */
+.country-search-input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background: #333;
+  border: 1px solid #555;
+  color: var(--text-color-light);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.country-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Add to src/styles.css */
+.search-bar-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.suggestions-list {
+    position: absolute;
+    top: 100%; /* Position below the input field */
+    left: 0;
+    right: 0;
+    z-index: 20;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg-color-dark);
+    border: 1px solid var(--border-color-dark);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions-list li {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color-dark);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.suggestions-list li:last-child {
+    border-bottom: none;
+}
+
+.suggestions-list li:hover {
+    background-color: var(--bg-color-light);
+}
+
+.suggestions-list li a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    display: block;
+}
