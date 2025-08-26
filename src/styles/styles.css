@@ -77,18 +77,24 @@ a {
   gap: 20px;
 }
 
+/* src/styles.css */
+
+/* src/styles.css */
+
 .movie-card {
   position: relative;
   background: var(--card-bg-dark);
+  border: 1px solid #3a3a3a;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .movie-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   z-index: 10;
-  box-shadow: 0 10px 20px var(--shadow-color-dark);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); 
 }
 
 .movie-card-poster {
