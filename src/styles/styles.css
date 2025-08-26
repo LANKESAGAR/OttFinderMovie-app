@@ -425,3 +425,45 @@ color: #aaa;
     border-radius: 8px;
   }
 }
+
+/* src/styles.css */
+
+.provider {
+  display: flex;
+  align-items: center; /* Vertically centers the logo and text */
+  gap: 10px; /* Provides a gap between the image and the span */
+  background: var(--bg-color-dark);
+  border: 1px solid var(--border-color-dark);
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.provider:hover {
+  background-color: #2a2a2a;
+}
+
+.provider img {
+  width: 40px; /* Sets a fixed width for the logo */
+  height: 40px; /* Sets a fixed height for the logo */
+  border-radius: 50%; /* Makes the logos circular */
+  object-fit: contain;
+}
+
+.provider span {
+  font-size: 0.9rem;
+  white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+/* New style to remove underline from links */
+.provider-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.provider-list {
+  display: flex;
+  flex-wrap: wrap; /* Allows providers to wrap to the next line */
+  gap: 10px; /* Spacing between each provider card */
+}
+

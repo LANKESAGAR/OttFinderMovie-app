@@ -99,54 +99,56 @@ const MovieDetailPage = () => {
                                     filteredCountries.map((countryCode) => (
                                         <div key={countryCode} className="country-provider-block">
                                             <h3>{getCountryName(countryCode)}</h3>
-                                            {providers[countryCode].flatrate && (
-                                                <div className="provider-list-container">
-                                                    <h4>Subscription:</h4>
-                                                    <div className="provider-list">
-                                                        {providers[countryCode].flatrate.map((provider) => (
-                                                            <div key={provider.provider_id} className="provider">
-                                                                <img
-                                                                    src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}
-                                                                    alt={provider.provider_name}
-                                                                />
-                                                                <span>{provider.provider_name}</span>
-                                                            </div>
-                                                        ))}
+                                            <a href={providers[countryCode].link} target="_blank" rel="noopener noreferrer" className="provider-list-link">
+                                                {providers[countryCode].flatrate && (
+                                                    <div className="provider-list-container">
+                                                        <h4>Subscription:</h4>
+                                                        <div className="provider-list">
+                                                            {providers[countryCode].flatrate.map((provider) => (
+                                                                <div key={provider.provider_id} className="provider">
+                                                                    <img
+                                                                        src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}
+                                                                        alt={provider.provider_name}
+                                                                    />
+                                                                    <span>{provider.provider_name}</span>
+                                                                </div>
+                                                            ))}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )}
-                                            {providers[countryCode].buy && (
-                                                <div className="provider-list-container">
-                                                    <h4>Buy:</h4>
-                                                    <div className="provider-list">
-                                                        {providers[countryCode].buy.map((provider) => (
-                                                            <div key={provider.provider_id} className="provider">
-                                                                <img
-                                                                    src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}
-                                                                    alt={provider.provider_name}
-                                                                />
-                                                                <span>{provider.provider_name}</span>
-                                                            </div>
-                                                        ))}
+                                                )}
+                                                {providers[countryCode].buy && (
+                                                    <div className="provider-list-container">
+                                                        <h4>Buy:</h4>
+                                                        <div className="provider-list">
+                                                            {providers[countryCode].buy.map((provider) => (
+                                                                <div key={provider.provider_id} className="provider">
+                                                                    <img
+                                                                        src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}
+                                                                        alt={provider.provider_name}
+                                                                    />
+                                                                    <span>{provider.provider_name}</span>
+                                                                </div>
+                                                            ))}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )}
-                                            {providers[countryCode].rent && (
-                                                <div className="provider-list-container">
-                                                    <h4>Rent:</h4>
-                                                    <div className="provider-list">
-                                                        {providers[countryCode].rent.map((provider) => (
-                                                            <div key={provider.provider_id} className="provider">
-                                                                <img
-                                                                    src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}
-                                                                    alt={provider.provider_name}
-                                                                />
-                                                                <span>{provider.provider_name}</span>
-                                                            </div>
-                                                        ))}
+                                                )}
+                                                {providers[countryCode].rent && (
+                                                    <div className="provider-list-container">
+                                                        <h4>Rent:</h4>
+                                                        <div className="provider-list">
+                                                            {providers[countryCode].rent.map((provider) => (
+                                                                <div key={provider.provider_id} className="provider">
+                                                                    <img
+                                                                        src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}
+                                                                        alt={provider.provider_name}
+                                                                    />
+                                                                    <span>{provider.provider_name}</span>
+                                                                </div>
+                                                            ))}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            )}
+                                                )}
+                                            </a>
                                         </div>
                                     ))
                                 ) : (
