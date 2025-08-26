@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-content">
                 <p>&copy; {new Date().getFullYear()} Movieflix. All Rights Reserved.</p>
-                <p>Developed by SAGAR LANKE</p>
+                <p>Developed by WASTE FELLOW</p>
             </div>
         </footer>
     );

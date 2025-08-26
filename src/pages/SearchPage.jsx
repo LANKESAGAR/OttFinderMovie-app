@@ -16,7 +16,6 @@ const SearchPage = () => {
 
     return (
         <div className="search-page-container">
-            <h1>{listTitle}</h1>
 
             <div className="search-bar-container">
                 <input
@@ -26,7 +25,7 @@ const SearchPage = () => {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
-
+<h1>{listTitle}</h1>
                 {suggestions.length > 0 && (
                     <ul className="suggestions-list">
                         {suggestions.map((movie) => (

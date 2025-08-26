@@ -156,7 +156,7 @@ a {
   border: 1px solid #555;
   color: var(--text-color-light);
   border-radius: 5px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   transition: border-color 0.3s ease;
 }
 
@@ -302,6 +302,14 @@ color: #aaa;
     position: relative;
     width: 100%;
     margin-bottom: 20px;
+}
+
+.page-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px; 
+  font-size: 2.5rem;
+  color: var(--primary-color);
 }
 
 .suggestions-list {
