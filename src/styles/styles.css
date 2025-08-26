@@ -22,6 +22,8 @@ body {
   background-color: var(--bg-color-dark);
   color: var(--text-color-light);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -467,3 +469,31 @@ color: #aaa;
   gap: 10px; /* Spacing between each provider card */
 }
 
+
+
+.app-container {
+  flex-grow: 1; /* This pushes the footer to the bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1; /* Ensures content pushes the footer down */
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer {
+  background-color: var(--card-bg-dark);
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--border-color-dark);
+}
+
+.footer-content p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}

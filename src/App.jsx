@@ -7,19 +7,23 @@ import Header from './components/Header'
 import { Route, Routes } from 'react-router-dom'
 import MovieDetailPage from './pages/MovieDetailPage'
 import WatchlistPage from './pages/WatchlistPage'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <WatchlistContextProvider>
-     <div className="app-container">
-      <Header />
-      <Routes>
-        <Route path='/' element={<SearchPage />} />
-        <Route path='/movie/:id' element={<MovieDetailPage />} />
-        <Route path='/watchlist' element={<WatchlistPage />} />
-      </Routes>
-     </div>
+      <div className="app-container">
+        <Header />
+        <main>
+          <Routes>
+            <Route path='/' element={<SearchPage />} />
+            <Route path='/movie/:id' element={<MovieDetailPage />} />
+            <Route path='/watchlist' element={<WatchlistPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </WatchlistContextProvider>
   )
 }
